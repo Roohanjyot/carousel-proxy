@@ -1,0 +1,19 @@
+{
+    "name": "roohan",
+    "version": "1.0.0",
+    "dependencies": {
+        "express": "4.17.1",
+        "body-parser": "1.19.0",
+        "react": "16.13.1",
+        "react-dom": "16.13.1",
+        "axios": "0.19.2",
+        "mongoose": "5.9.10"
+    },
+    "devDependencies": {
+        "babel-core": "^6.23.1",
+        "babel-loader": "^6.3.2",
+        "babel-preset-es2015": "^6.22.0",
+        "babel-preset-react": "^6.23.0",
+        "webpack": "^2.2.1"
+    }
+}
