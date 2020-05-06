@@ -1,11 +1,25 @@
-// 
+// require mongoose 
+let mongoose = require("mongoose");
+// connect mongoose at products
+mongoose.connect("mongodb://localhost/fec", {useNewUrlParser: true})
+// have productModel schema 
+let connection = mongoose.connection;
+connection.on('error', console.error.bind(console, 'connection error:'));
+connection.once('open', function() {
+  // we're connected!
+  console.log("db connected!");
+});
 
-// ? product collection
-var productSchema = {
+let productSchema = mongoose.Schema({
     product_id : {
         type : Number,
         min : 1000,
         max : 9999
+    },
+    product_name : {
+        type : String,
+        minlength : 1,
+        maxlength : 100
     },
     price : {
         type : Number,
@@ -35,14 +49,14 @@ var productSchema = {
                 min : 1000,
                 max : 9999
             },
-            content : URL,
+            content : String,
             tweet : {
                 tweet_id : {
                     type : Number,
                     min : 1000,
                     max : 9999
                 },
-                tweet_content : {
+                tweet_body : {
                     type : String,
                     minlength : 1,
                     maxlength : 280
@@ -52,8 +66,25 @@ var productSchema = {
                     minlength : 1,
                     maxlength : 99
                 },
-                tweet_dp : URL
+                tweet_dp : String
             }
         }
     ]
+});
+// have a model refer to that schema 
+let productModel = mongoose.model("Product", productSchema);
+// write data retrival process
+let dataRetriver = (callback) => {
+    productModel.find({}, (err, data) => {
+        if (err) {
+            callback(err);
+            return;
+        }
+        callback(null, data)
+    })
+}
+// export the model 
+module.exports = {
+    productModel,
+    dataRetriver
 }
