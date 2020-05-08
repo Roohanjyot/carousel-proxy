@@ -8,12 +8,12 @@
         "test": "jest"
     },
     "dependencies": {
-        "express": "4.17.1",
-        "body-parser": "1.19.0",
-        "react": "16.13.1",
-        "react-dom": "16.13.1",
         "axios": "0.19.2",
-        "mongoose": "5.9.10"
+        "body-parser": "1.19.0",
+        "express": "4.17.1",
+        "mongoose": "5.9.10",
+        "react": "16.13.1",
+        "react-dom": "16.13.1"
     },
     "devDependencies": {
         "@babel/core": "^7.9.6",
@@ -22,6 +22,7 @@
         "babel-core": "^7.0.0-bridge.0",
         "babel-jest": "^26.0.1",
         "babel-loader": "^6.3.2",
+        "chai": "^4.2.0",
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.2",
         "jest": "^26.0.1",
