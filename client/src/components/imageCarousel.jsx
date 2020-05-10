@@ -14,12 +14,12 @@ class ImageCarousel extends React.Component {
             return (
                 <div className="imageCarousel">
                     <div className="imageCollection">
-                        {this.props.images.map(image => {
-                            return <ImageCollection key={image._id} id={image._id} image={image.content} tweet={image.tweet}/>
+                        {this.props.images.map((image, index) => {
+                            return <ImageCollection key={image._id} id={image._id} image={image.content} tweet={image.tweet} index={index}/>
                         })}
                     </div>
                     <div className="displayedImage">
-                        <MainImage imageObj={this.props.displayedImage}/> 
+                        <MainImage imageObj={this.props.displayedImage} images={this.props.images}/> 
                     </div>
                 </div>
             )

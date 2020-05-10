@@ -43,6 +43,7 @@ html {
  display: grid;
  grid-template-columns: 2fr 1fr 1fr;
  grid-column-gap: 12px;
+ position: relative;
 }
 
 .imageCarousel{
@@ -50,15 +51,36 @@ html {
     grid-template-columns: 1fr 5fr;
 }
 
-.imageElement > img {
+.imageElement > a >img {
     width : 109px;
     min-height: 76px;
     max-height: 109px;
+    object-fit: cover;
 }
 
-.mainImageDiv > img{
+.mainImageDiv{
+    display: flex;
+    position: absolute;
+    overflow: hidden;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    z-index: -1;
+}
+
+.mainImageDiv > div {
+    position: relative;
+    width: 1500px;
+    flex-shrink: 0;
+}
+
+.mainImageDiv > div > img{
     width: 566px;
     height: 566px;
+    padding:4px;
+    object-fit: cover;
 }
 
 .configurations{
@@ -85,6 +107,8 @@ html {
 .quantityBanner select{
     height: 35px;
     width: 50px;
+    border-radius: 5px;
+    background: white;
 }
 
 .sizeBanner{

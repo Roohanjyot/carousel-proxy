@@ -9,7 +9,9 @@ class ImageCollection extends React.Component {
         // console.log(this.props, "imagecollection props")
         return (
             <div className="imageElement">
+                <a href={`#slide-${this.props.index}`}>
                 <img src={this.props.image} />
+                </a>
             </div>
         );
     }
