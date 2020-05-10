@@ -16,7 +16,7 @@ class MainImage extends React.Component {
         zoom.setAttribute("class", "imgMagnifierElement");
 
         // Insert magnifier
-        // image.parentElement.insertBefore(zoom, image);
+        image.parentElement.insertBefore(zoom, image);
 
         // Set background properties for zoom
         zoom.style.backgroundImage = "url('" + image.src + "')";
@@ -68,9 +68,9 @@ class MainImage extends React.Component {
         }
     }
 
-    componentDidMount() {
-        this.magnify("mainImage");
-    }
+    // componentDidMount() {
+    //     this.magnify("mainImage");
+    // }
 
     
 
@@ -80,7 +80,7 @@ class MainImage extends React.Component {
             // do something 
             return (
                 <div className="mainImageDiv">
-                    <img src={this.props.imageObj.content} className="mainImage"/>
+                    <img src={this.props.imageObj.content} />
                 </div>
             )
         } else {

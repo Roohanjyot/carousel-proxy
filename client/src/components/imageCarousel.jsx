@@ -15,7 +15,7 @@ class ImageCarousel extends React.Component {
                 <div className="imageCarousel">
                     <div className="imageCollection">
                         {this.props.images.map(image => {
-                            return <ImageCollection key={image._id} image={image.content} tweet={image.tweet}/>
+                            return <ImageCollection key={image._id} id={image._id} image={image.content} tweet={image.tweet}/>
                         })}
                     </div>
                     <div className="displayedImage">

@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import Banner from "./banner.jsx";
 import Configurations from "./configurations.jsx";
-import ImageCrousel from "./imageCarousel.jsx";
+import ImageCarousel from "./imageCarousel.jsx";
 
 class App extends React.Component {
     constructor(props) {
@@ -35,10 +35,12 @@ class App extends React.Component {
     render() {
         // console.log(this.state, "app state")
         return (
-            <div>
+            <div className="react-app">
                 <Banner productName={this.state.product.product_name}/>
-                <ImageCrousel images={this.state.product.photos} displayedImage={this.state.displayedImageObj}/>
+                <div className="contents">
+                <ImageCarousel images={this.state.product.photos} displayedImage={this.state.displayedImageObj}/>
                 <Configurations price={this.state.product.price} rating={this.state.product.rating} sizes={this.state.product.sizes}/> 
+                </div>
             </div>
         )
     }
