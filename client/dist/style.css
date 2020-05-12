@@ -1,9 +1,9 @@
-html {
+/* html {
   font-family: Targetica, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 12px;
   text-size-adjust: 100%;
   box-sizing: border-box;
-}
+} */
 
 .react-app{
   display : grid;
@@ -115,7 +115,7 @@ position: relative;
 
 .sizeBanner{
   font-size: 19px;
-  
+
 }
 
 .sizes button {
