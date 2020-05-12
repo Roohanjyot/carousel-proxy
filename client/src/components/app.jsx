@@ -6,7 +6,7 @@ import ImageCarousel from "./imageCarousel.jsx";
 import Modal from "./modal.jsx";
 // import styles from "../style.module.css";
 
-class App extends React.Component {
+class CaroApp extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,7 +16,7 @@ class App extends React.Component {
     }
 
     stateUpdater(callback) {
-        axios.get("/fetch")
+        axios.get("/caro/fetch")
         .then(res => {
             // console.log(res.data[0])
             callback(null, res.data);
@@ -42,7 +42,7 @@ class App extends React.Component {
                 <Banner productName={this.state.product.product_name}/>
                 <div className="contents">
                 <ImageCarousel images={this.state.product.photos} displayedImage={this.state.displayedImageObj}/>
-                <Configurations price={this.state.product.price} rating={this.state.product.rating} sizes={this.state.product.sizes}/> 
+                <Configurations price={this.state.product.price} rating={this.state.product.rating} sizes={this.state.product.sizes}/>
                 <Modal />
                 </div>
             </div>
@@ -50,4 +50,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default CaroApp;

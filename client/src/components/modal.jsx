@@ -9,9 +9,11 @@ class App extends React.Component {
     render() {
         // console.log(this.state, "app state")
         return (
-            <div className="modal">
-                
-                
+            <div>
+            <div className="alex-app"></div>
+            <div className='modal-root'> </div>
+            <div className="roohan-modal">
+            </div>
             </div>
         )
     }
