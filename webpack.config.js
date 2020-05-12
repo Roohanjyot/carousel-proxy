@@ -13,7 +13,7 @@ var DIST_DIR = path.join(__dirname, '/client/dist');
 //       {
 //         test: /\.jsx?/,
 //         include: SRC_DIR,
-//         loader: 'babel-loader',      
+//         loader: 'babel-loader',
 //         query: {
 //           presets: ['@babel/preset-react', '@babel/preset-env']
 //         }
@@ -41,6 +41,12 @@ module.exports = [
             },
           },
         },
+        {
+          test: /\.css$/,
+          use: [
+            'style-loader', 'css-loader',
+          ],
+        },
       ],
     },
     output: {
@@ -49,29 +55,4 @@ module.exports = [
       publicPath: '/',
     },
   },
-  // { 
-  //   name: 'style',
-  //   entry: path.join(__dirname, 'client','src','style.css'),
-  //   output: {
-  //     filename: 'style.module.css',
-  //     path: path.join(__dirname, 'client', 'src'),
-  //   },
-  //   module: {
-  //     rules: [
-  //       {
-  //         test: /\.css$/i,
-  //         exclude: /node_modules/,
-  //         use: [
-  //           'style-loader',
-  //           {
-  //             loader: 'css-loader',
-  //             options: {
-  //               modules: true,
-  //             },
-  //           },
-  //         ],
-  //       },
-  //     ],
-  //   },
-  // },
 ];
