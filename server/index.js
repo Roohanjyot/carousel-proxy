@@ -1,17 +1,16 @@
 // import express
 const express = require("express");
 // import body parser
-const bodyParser = require("body-parser");  
+const bodyParser = require("body-parser");
 // import path
 const path = require("path");
 
 //--------------------------------------------------------------------------
 
-// create app 
+// create app
 let app = express();
 
 app.use(bodyParser.json());
-
 
 app.use(express.static(path.join(__dirname, "..", "client", "src", "style.module.css")));
 
