@@ -17,7 +17,7 @@ let sizeGenerator = () => {
             availble : [true, false][Math.floor(Math.random())]
         };
     };
-    outputArr.push(sizeMaker("X"));
+    outputArr.push(sizeMaker("S"));
     outputArr.push(sizeMaker("M"));
     outputArr.push(sizeMaker("L"));
     outputArr.push(sizeMaker("XL"));
@@ -96,7 +96,7 @@ let photosGenerator = () => {
         //     min : 1000,
         //     max : 9999
         // }
-        product_name : "BlaclTee",
+        product_name : "The Cheapest BlackTee You'll Ever Get",
         price : randomNumberGenerator(0, 999999, true),
         // {
         //     type : Number,
