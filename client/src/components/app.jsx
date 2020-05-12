@@ -4,7 +4,7 @@ import Banner from "./banner.jsx";
 import Configurations from "./configurations.jsx";
 import ImageCarousel from "./imageCarousel.jsx";
 import Modal from "./modal.jsx";
-import Style from "../../dist/style.css";
+// import styles from "../style.module.css";
 
 class App extends React.Component {
     constructor(props) {
@@ -18,7 +18,7 @@ class App extends React.Component {
     stateUpdater(callback) {
         axios.get("/fetch")
         .then(res => {
-            console.log(res.data[0])
+            // console.log(res.data[0])
             callback(null, res.data);
         })
         .catch(err => {callback(err)})
@@ -36,7 +36,7 @@ class App extends React.Component {
 
     render() {
         // console.log(this.state, "app state")
-        console.log(Style, "style!")
+        // console.log(styles.contents, "style!")
         return (
             <div className="react-app">
                 <Banner productName={this.state.product.product_name}/>

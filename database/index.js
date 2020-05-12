@@ -35,7 +35,7 @@ let productSchema = mongoose.Schema({
         {
             size : {
                 type : String,
-                enum : ["X", "M", "L", "XL", "2XL"]
+                enum : ["S", "M", "L", "XL", "2XL"]
             },
             availble : Boolean
         }

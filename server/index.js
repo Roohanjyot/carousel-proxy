@@ -10,7 +10,10 @@ const path = require("path");
 // create app 
 let app = express();
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
+
+
+app.use(express.static(path.join(__dirname, "..", "client", "src", "style.module.css")));
 
 app.use(express.static(path.join(__dirname, "..", "client", "dist")));
 

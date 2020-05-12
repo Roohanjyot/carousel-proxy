@@ -6,7 +6,7 @@ class SlideGenerator extends React.Component {
     }
 
     render() {
-        console.log(this.props.image, "images in slidegenerator")
+        // console.log(this.props.image, "images in slidegenerator")
             // do something
             return (
                 <div id={`slide-${this.props.index}`}>

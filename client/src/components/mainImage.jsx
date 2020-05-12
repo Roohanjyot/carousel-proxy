@@ -8,7 +8,7 @@ class MainImage extends React.Component {
 
     
     render() {
-        console.log(this.props, "mainImage props")
+        // console.log(this.props, "mainImage props")
         if (this.props.imageObj.content !== undefined) {
             // do something 
             return (

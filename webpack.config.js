@@ -49,29 +49,29 @@ module.exports = [
       publicPath: '/',
     },
   },
-  { 
-    name: 'style',
-    entry: path.join(__dirname, 'client','src','style.css'),
-    output: {
-      filename: 'style.css',
-      path: path.join(__dirname, 'client', 'dist'),
-    },
-    module: {
-      rules: [
-        {
-          test: /\.css$/i,
-          exclude: /node_modules/,
-          use: [
-            'style-loader',
-            {
-              loader: 'css-loader',
-              options: {
-                modules: true,
-              },
-            },
-          ],
-        },
-      ],
-    },
-  },
+  // { 
+  //   name: 'style',
+  //   entry: path.join(__dirname, 'client','src','style.css'),
+  //   output: {
+  //     filename: 'style.module.css',
+  //     path: path.join(__dirname, 'client', 'src'),
+  //   },
+  //   module: {
+  //     rules: [
+  //       {
+  //         test: /\.css$/i,
+  //         exclude: /node_modules/,
+  //         use: [
+  //           'style-loader',
+  //           {
+  //             loader: 'css-loader',
+  //             options: {
+  //               modules: true,
+  //             },
+  //           },
+  //         ],
+  //       },
+  //     ],
+  //   },
+  // },
 ];
