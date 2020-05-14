@@ -1,8 +1,23 @@
-// require mongoose 
+// require mongoose
 let mongoose = require("mongoose");
 // connect mongoose at products
-mongoose.connect("mongodb://localhost/fec", {useNewUrlParser: true})
-// have productModel schema 
+const dotenv = require('dotenv');
+
+dotenv.config();
+const {
+  MONGO_HOSTNAME,
+  MONGO_DB,
+  MONGO_PORT,
+} = process.env;
+
+const dbConnectUrl = { LOCALURL: `mongodb://${MONGO_HOSTNAME}:${MONGO_PORT}/${MONGO_DB}` };
+
+
+// mongoose.connect("mongodb://localhost/fec", {useNewUrlParser: true})
+
+mongoose.connect(dbConnectUrl.LOCALURL);
+
+// have productModel schema
 let connection = mongoose.connection;
 connection.on('error', console.error.bind(console, 'connection error:'));
 connection.once('open', function() {
@@ -42,7 +57,7 @@ let productSchema = mongoose.Schema({
     ],
     questions : Boolean,
     favorite : Boolean,
-    photos : [// ! ARRAY 
+    photos : [// ! ARRAY
         {
             photo_id : {
                 type : Number,
@@ -71,7 +86,7 @@ let productSchema = mongoose.Schema({
         }
     ]
 });
-// have a model refer to that schema 
+// have a model refer to that schema
 let productModel = mongoose.model("Product", productSchema);
 // write data retrival process
 let dataRetriver = (callback) => {
@@ -83,7 +98,7 @@ let dataRetriver = (callback) => {
         callback(null, data)
     })
 }
-// export the model 
+// export the model
 module.exports = {
     productModel,
     dataRetriver
