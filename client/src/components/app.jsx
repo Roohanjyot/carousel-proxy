@@ -16,7 +16,7 @@ class CaroApp extends React.Component {
     }
 
     stateUpdater(callback) {
-        axios.get("/caro/fetch")
+        axios.get("http://127.0.0.1:3000/caro/fetch")
         .then(res => {
             // console.log(res.data[0])
             callback(null, res.data);

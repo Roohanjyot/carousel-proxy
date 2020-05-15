@@ -2,6 +2,7 @@
 const express = require("express");
 // import body parser
 const bodyParser = require("body-parser");
+const cors = require('cors');
 // import path
 const path = require("path");
 
@@ -16,6 +17,7 @@ app.use(express.static(path.join(__dirname, "..", "client", "src", "style.module
 
 app.use(express.static(path.join(__dirname, "..", "client", "dist")));
 
+app.use(cors());
 // require routes
 const routes = require(path.join(__dirname, "routes.js"))
 
